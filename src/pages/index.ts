@@ -1,16 +1,18 @@
 import BasicAppPage from "./common/basicAppPage"
-import CurrencyManager from "./currencyManager"
+import CreateProduct from "./addProduct"
 import App from "./common/App"
-import Currency from "./currency"
 import InstallAppPage from "./installApp"
+import ProductManager from "./manageProduct"
+import ShoppingList from "./shoppingList"
 import Summary from "./summary"
 import 'assets/style/App.css'
 
 export{
     BasicAppPage,
-    CurrencyManager,
+    CreateProduct,
+    ProductManager,
+    ShoppingList,
     App,
-    Currency,
     Summary,
     InstallAppPage
 }

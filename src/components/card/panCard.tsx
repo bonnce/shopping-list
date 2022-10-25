@@ -159,7 +159,7 @@ const PanCard = ({children, onDeadZone, isDraggin, isInDZ} :
     },[isDrag,width,height])
 
     return <div ref={panRef} className="container card pan-card" data-drag={true}
-    style={{backgroundColor: theme.thirty, boxShadow: `0 2px 2px 0 ${theme.ten}80, 0 4px 4px 0 ${theme.thirty}`, 
+    style={{backgroundColor: theme.thirty, boxShadow: `0 2px 2px 0 ${theme.shadow}`, 
     borderRight:`5em solid ${theme.ten}`}}>
         {children}
     </div>

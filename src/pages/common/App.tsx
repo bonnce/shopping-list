@@ -1,14 +1,13 @@
 import { IDBPDatabase } from "idb"
 import { themes, Theme, createDB, Database, NAMEDB, useDeferredPrompt, DeferredPrompt} from "misc"
-import { iCurrencyDB } from "misc/types"
-import { CurrencyManager, Summary, InstallAppPage } from "pages"
+import { iShoppingDB } from "misc/types"
+import { Summary, InstallAppPage, CreateProduct, ShoppingList, ProductManager } from "pages"
 import { useEffect, useState } from "react"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
-import CurrencyRoutes from "./currencyRoutes"
 
 const App = ()=>{
     const [theme,setTheme] = useState(themes.light)
-    const [db,setDB] = useState<IDBPDatabase<iCurrencyDB>|null>(null)
+    const [db,setDB] = useState<IDBPDatabase<iShoppingDB>|null>(null)
     
     const handleDB = async ()=>{
         const db = await createDB(NAMEDB)
@@ -28,13 +27,14 @@ const App = ()=>{
         <Database.Provider value={db}>
         <DeferredPrompt.Provider value={{deferredPrompt,setDeferredPrompt}}>
 
-            <Router basename="/investment-manager-app">
+            <Router basename="/shopping-list">
                 <Routes>
                     <>
-                    <Route index element={<CurrencyManager/>} />                
+                    <Route index element={<CreateProduct/>} />                
                     <Route path='/summary' element={<Summary/>} />
-                    {CurrencyRoutes(db)}
-                        <Route path='/install' element={<InstallAppPage/>} />
+                    <Route path='/buildList' element={<ShoppingList/>} />
+                    <Route path='/adminProducts' element={<ProductManager/>} />
+                    <Route path='/install' element={<InstallAppPage/>} />
                     </>
                 </Routes>
             </Router>

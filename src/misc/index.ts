@@ -1,8 +1,8 @@
 import { themes,Theme, Database,DeferredPrompt } from './context'
 import { createDB, get, getAll, save, remove, update } from './dbcontrol'
 import { handleMenu, handleTotal, leftRate, timeout} from './utils'
-import { NAMECOLLCURRENCY, NAMECOLLSHOPPING, INDEXCURRENCYDB,INDEXSHOPPINGDB,NAMEDB } from './const'
-import { iCurrency, iCurrencyDB, iShopping, iScore, BeforeInstallPromptEvent } from './types'
+import { NAMECOLLECTION, INDEXCOLLECTION, NAMEDB } from './const'
+import { iProducts, iShoppingDB, iScore, BeforeInstallPromptEvent, inputType, iInputForm } from './types'
 import { useWindowDimensions, useDeferredPrompt } from './hooks'
 
 export{
@@ -22,16 +22,15 @@ export{
     Theme,
     DeferredPrompt,
     Database,
-    NAMECOLLCURRENCY,
-    NAMECOLLSHOPPING,
-    INDEXCURRENCYDB,
-    INDEXSHOPPINGDB,
+    NAMECOLLECTION,
+    INDEXCOLLECTION,
     NAMEDB
 }
 export type{
-    iCurrency,
-    iCurrencyDB,
-    iShopping,
+    iProducts,
+    iShoppingDB,
     iScore,
-    BeforeInstallPromptEvent
+    BeforeInstallPromptEvent,
+    inputType,
+    iInputForm
 }

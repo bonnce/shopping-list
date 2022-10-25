@@ -7,7 +7,7 @@ const PlusButton = ({onClick, className}:{onClick?:React.MouseEventHandler<HTMLB
     const {theme} = useContext(Theme)
     const newClass = `diamond-button ${className || ''}`
     return <BasicButton className={newClass} onClick={onClick}>
-        <Icon icon={cross} alt='cross' style={{filter:`invert(${theme.invert})`}} />
+        <Icon icon={cross} alt='cross' style={{filter:`invert(${+!+theme.invert})`}} />
     </BasicButton>
 }
 

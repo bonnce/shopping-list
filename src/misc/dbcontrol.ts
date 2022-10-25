@@ -1,27 +1,20 @@
 import { IDBPDatabase, openDB } from "idb"
-import { iCurrency, iCurrencyDB, iShopping } from "./types"
-import { INDEXCURRENCYDB,INDEXSHOPPINGDB, NAMECOLLCURRENCY,NAMECOLLSHOPPING } from "./const"
+import { iProducts, iShoppingDB } from "./types"
+import { INDEXCOLLECTION, NAMECOLLECTION } from "./const"
 
 // create data base
 const createDB = async (nameDB:string)=>{
     try{
-        return openDB<iCurrencyDB>(nameDB,3,{
+        return openDB<iShoppingDB>(nameDB,1,{
         upgrade(db, oldVersion, newVersion, transaction) {
             switch(oldVersion){
                 case 0:
                 case 1:
-                case 2:
-                case 3:
-                    const storeCurrency = db.createObjectStore(NAMECOLLCURRENCY,{
+                    const storeProduct = db.createObjectStore(NAMECOLLECTION,{
                         autoIncrement: true,
                         keyPath: 'id'
                     })
-                    storeCurrency.createIndex(INDEXCURRENCYDB,INDEXCURRENCYDB)
-                    const storeShopping = db.createObjectStore(NAMECOLLSHOPPING,{
-                        autoIncrement: true,
-                        keyPath: 'id'
-                    })
-                    storeShopping.createIndex(INDEXSHOPPINGDB,INDEXSHOPPINGDB)
+                    storeProduct.createIndex(INDEXCOLLECTION,INDEXCOLLECTION)
             }
         }
     })
@@ -32,7 +25,7 @@ const createDB = async (nameDB:string)=>{
 }
 
 // get data from db
-const getAll = async (db:IDBPDatabase<iCurrencyDB>,nameColl:typeof NAMECOLLCURRENCY | typeof NAMECOLLSHOPPING)=>{
+const getAll = async (db:IDBPDatabase<iShoppingDB>,nameColl:typeof NAMECOLLECTION)=>{
     try{
         const tx = db.transaction(nameColl,'readonly')
         const store = tx.objectStore(nameColl)
@@ -43,7 +36,7 @@ const getAll = async (db:IDBPDatabase<iCurrencyDB>,nameColl:typeof NAMECOLLCURRE
     }
 }
 
-const get = async (db:IDBPDatabase<iCurrencyDB>,nameColl:typeof NAMECOLLCURRENCY | typeof NAMECOLLSHOPPING,req:number)=>{
+const get = async (db:IDBPDatabase<iShoppingDB>,nameColl:typeof NAMECOLLECTION,req:number)=>{
     try{
         const tx = db.transaction(nameColl,'readonly')
         const store = tx.objectStore(nameColl)
@@ -57,7 +50,7 @@ const get = async (db:IDBPDatabase<iCurrencyDB>,nameColl:typeof NAMECOLLCURRENCY
 
 
 // add data to db
-const save = async (db:IDBPDatabase<iCurrencyDB>,nameColl:typeof NAMECOLLCURRENCY | typeof NAMECOLLSHOPPING,item:iCurrency|iShopping)=>{
+const save = async (db:IDBPDatabase<iShoppingDB>,nameColl:typeof NAMECOLLECTION,item:iProducts)=>{
     try{
         const isInStore = item?.id && await get(db,nameColl,item.id)
         if(isInStore) return "Already in database"
@@ -76,7 +69,7 @@ const save = async (db:IDBPDatabase<iCurrencyDB>,nameColl:typeof NAMECOLLCURRENC
 }
 
 // remove data from db
-const remove = async (db:IDBPDatabase<iCurrencyDB>,nameColl:typeof NAMECOLLCURRENCY | typeof NAMECOLLSHOPPING,key:number)=>{
+const remove = async (db:IDBPDatabase<iShoppingDB>,nameColl:typeof NAMECOLLECTION,key:number)=>{
     try{
         const tx = db.transaction(nameColl,'readwrite')
         const store = tx.objectStore(nameColl)
@@ -94,7 +87,7 @@ const remove = async (db:IDBPDatabase<iCurrencyDB>,nameColl:typeof NAMECOLLCURRE
 }
 
 // update data from db
-const update = async (db:IDBPDatabase<iCurrencyDB>,nameColl:typeof NAMECOLLCURRENCY | typeof NAMECOLLSHOPPING, item:iCurrency|iShopping)=>{
+const update = async (db:IDBPDatabase<iShoppingDB>,nameColl:typeof NAMECOLLECTION, item:iProducts)=>{
     try{
 
         const isInStore = item?.id && await get(db,nameColl,item.id)

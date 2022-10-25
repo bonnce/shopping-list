@@ -9,7 +9,7 @@ const BasicButton = (props:DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElem
     const {theme} = useContext(Theme)
 
     const newClassName = `container button ${className || ''}`
-    const newStyles = {...style, backgroundColor:theme.ten,color:theme.text,boxShadow: `4px 4px 4px 0 ${theme.sixty}65, 4px 4px 4px 0 ${theme.ten}B0`}
+    const newStyles = {...style, backgroundColor:theme.ten,color:theme.sixty,boxShadow: `4px 4px 4px 0 ${theme.shadow}`}
 
     const buttonRef = useRef<HTMLButtonElement>(null);
     const mouseDown = ()=>{
@@ -21,7 +21,7 @@ const BasicButton = (props:DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElem
     const mouseUp = ()=>{
         if(buttonRef.current){
             buttonRef.current.style.backgroundColor=theme.ten
-            buttonRef.current.style.boxShadow= `4px 4px 4px 0 ${theme.sixty}65, 4px 4px 4px 0 ${theme.ten}B0`
+            buttonRef.current.style.boxShadow= `4px 4px 4px 0 ${theme.shadow}`
         }
     }
 
