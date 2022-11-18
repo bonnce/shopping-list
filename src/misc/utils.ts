@@ -15,10 +15,13 @@ const timeout = async (ms:number) => await new Promise(r => setTimeout(r,ms))
 
 const deleteEquals = <T>(arr:T[]):T[] => Array.from(new Set(arr))
 
-const filterBy = <T>(arr:T[], field:keyof T):T[][] =>{
-  const arrField = deleteEquals(arr.map(p => p[field]))
-  const filtered = arrField.map(cat => arr.filter(ele => ele[field] === cat))
-  return filtered
+const filterBy = <M>(arr:M[], field:keyof M) =>{
+  let maped:{ [key: string]:M[]} = {};
+  arr.forEach(ele =>{
+      const index = ele[field] as string
+      maped[index] = maped[index] ? [...maped[index],ele] : [ele]
+  })
+  return maped
 }
 
 export{

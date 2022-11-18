@@ -8,6 +8,10 @@
   display: grid;
 }
 
+.mg-top-3{
+  margin-top: 3em;
+}
+
 .col-6{
   grid-template-columns: repeat(5, 1fr) .5fr;
 }
@@ -74,6 +78,14 @@
 
 .justify-end{
   justify-content: flex-end;
+}
+
+.red{
+  background-color: #d30;
+}
+
+.green{
+  background-color: #3d0;
 }
 
 .app{
@@ -429,22 +441,26 @@
   position: relative;
   width: 100%;
   background-color: #000b;
+  justify-content: space-around;
 }
 
-.fade-in{
-  animation: in 500ms ease forwards;
+.shopping-blackBars > h2{
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 5em;
 }
 
-.from-right{
-  animation: from-right 1s linear forwards;
+.current-item{
+  font-size: 7.5em;
+  text-transform: capitalize;
 }
 
-.fade-out{
-  animation: out 500ms ease forwards;
-}
-
-.vanish{
-  animation: vanish 750ms ease infinite;
+.confirm-button{
+  font-size: 5em;
+  font-weight: 600;
+  color: #fff;
+  padding: 1em;
+  border-radius: .5em;
 }
 
 .install-guide{
@@ -479,13 +495,54 @@
   top:.1em;
 }
 
+
+.fade-in{
+  animation: in 500ms ease forwards;
+}
+
+.from-right{
+  animation: from-right 750ms linear forwards;
+}
+
+.to-left{
+  animation: to-left 750ms linear forwards;
+}
+
+.fade-out{
+  animation: out 500ms ease forwards;
+}
+
+.appear{
+  animation: in 1s ease forwards;
+  pointer-events: auto;
+  user-select: auto;
+}
+
+.hide{
+  animation: out 1s ease forwards;
+  pointer-events: none;
+  user-select: none;
+}
+
+.vanish{
+  animation: vanish 750ms ease infinite;
+}
+
 .growUp{
   animation: growTo30vh 750ms ease-in forwards;
 }
 
+.decrease{
+  animation: decrease30vh 750ms ease-in forwards;
+}
+
+.decrease > *{
+  visibility: hidden;
+}
+
 @keyframes out {
   from{
-    opacity: .8;
+    opacity: 1;
   }
   to{
     opacity: 0;
@@ -510,16 +567,37 @@
     opacity: 0;
   }
   to{
-    opacity: .8;
+    opacity: 1;
   }
 }
 
 @keyframes from-right {
-  from{
+  0%{
+    transform: skewX(-15deg);
     transform: translateX(150%);
   }
-  to{
+  80%{
+    transform: skewX(-15deg);
+  }
+  90%{
+    transform: skewX(15deg);
+  }
+  100%{
+    transform: skewX(0);
     transform: translateX(0);
+  }
+}
+
+@keyframes to-left {
+  0%{
+    transform: translateX(0);
+  }
+  10%{
+    transform: skewX(-5deg);
+  }
+  100%{
+    transform: skewX(-15deg);
+    transform: translateX(-150%);
   }
 }
 
@@ -529,6 +607,21 @@
   }
   to{
     height: 30vh;
+  }
+}
+
+@keyframes decrease30vh {
+  from{
+    height: 30vh;
+  }
+  to{
+    height: 0;
+  }
+}
+
+@keyframes decrease {
+  to{
+    height: 0;
   }
 }
 

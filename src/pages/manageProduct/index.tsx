@@ -1,12 +1,12 @@
 import { Collapse } from "components";
 import { Database, getAll, NAMECOLLECTION, RequiredProduct } from "misc";
-import { deleteEquals, filterBy } from "misc/utils";
+import { filterBy } from "misc/utils";
 import BasicAppPage from "pages/common/basicAppPage";
 import { useContext, useEffect, useState } from "react";
 import { CollapsedItems } from "./collapsedItems";
 
 const ProductManager = ()=>{
-    const [dataFiltered, setDataf] = useState<RequiredProduct[][]>()
+    const [dataFiltered, setDataf] = useState<{[key: string]: RequiredProduct[]}>()
     const [reload, setReload] = useState(true)
     const db = useContext(Database)
     useEffect(()=>{
@@ -27,7 +27,7 @@ const ProductManager = ()=>{
 return <BasicAppPage title='Administrar productos'>
     <div className="container column gap-md fullWidth">
 
-        {dataFiltered && dataFiltered.map(data => <Collapse title={data[0].category}>
+        {dataFiltered && Object.entries(dataFiltered).map(([category, data]) => <Collapse title={category}>
                 {data.map(ele => <CollapsedItems handleEvent={handleChange} ele={ele} key={ele.id} />)}
         </Collapse>)}
     </div>
