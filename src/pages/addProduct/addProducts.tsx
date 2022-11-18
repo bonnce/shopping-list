@@ -9,13 +9,13 @@ const AddProduct = ()=>{
     const db = useContext(Database)
     const handleSubmit = async (formData:iProducts)=>{
         if(db){
-            const result = await save(db,NAMECOLLECTION,formData)
+            await save(db,NAMECOLLECTION,formData)
             navigate(0)
         }
     }
-return <Card>
+return <Card className='card-form'>
     <div className="container column gap-md">
-        <h2 className="form-title">Agregue un Nuevo Producto</h2>
+        <h2 className="form-title">Nuevo Producto</h2>
         <Form inputs={INPUTS} onSubmit={handleSubmit}/>
     </div>
 </Card>

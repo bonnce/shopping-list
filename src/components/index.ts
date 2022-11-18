@@ -8,7 +8,6 @@ import Menu from "./menu";
 import Collapse from "./collapse";
 import { BasicButton, PlusButton } from "./button";
 import Footer from "./footer";
-import { DangerLines, TrashZone } from "./dangerZone";
 import InstallApp from "./installApp";
 
 export {
@@ -30,7 +29,5 @@ export {
     InvisibleInput,
     LoadingIcon,
     Footer,
-    DangerLines,
-    TrashZone,
     InstallApp
 }

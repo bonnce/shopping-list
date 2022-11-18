@@ -2,7 +2,7 @@ import { themes,Theme, Database,DeferredPrompt } from './context'
 import { createDB, get, getAll, save, remove, update } from './dbcontrol'
 import { handleMenu, handleTotal, leftRate, timeout} from './utils'
 import { NAMECOLLECTION, INDEXCOLLECTION, NAMEDB } from './const'
-import { iProducts, iShoppingDB, iScore, BeforeInstallPromptEvent, inputType, iInputForm } from './types'
+import { iProducts, iShoppingDB, BeforeInstallPromptEvent, inputType, iInputForm, RequiredProduct } from './types'
 import { useWindowDimensions, useDeferredPrompt } from './hooks'
 
 export{
@@ -29,8 +29,8 @@ export{
 export type{
     iProducts,
     iShoppingDB,
-    iScore,
     BeforeInstallPromptEvent,
     inputType,
-    iInputForm
+    iInputForm,
+    RequiredProduct
 }

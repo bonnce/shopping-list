@@ -1,8 +1,9 @@
 import { Theme } from "misc"
 import { ChangeEventHandler, useContext, useEffect, useId, useState } from "react"
 
-const InvisibleInput = ({name, label,onChange,className, defaultValue} : 
-    {name:string,className?:string, label:string,onChange?:ChangeEventHandler<HTMLInputElement>,defaultValue:string})=>{
+const InvisibleInput = ({name, label,onChange,className, defaultValue, inputType} : 
+    {name:string,className?:string, label:string,onChange?:ChangeEventHandler<HTMLInputElement>,defaultValue:string,
+    inputType?:string})=>{
     const id = useId()
     const [value,setValue] = useState(defaultValue || '')
     const handleChange:ChangeEventHandler<HTMLInputElement> = (e)=>{
@@ -20,13 +21,9 @@ const InvisibleInput = ({name, label,onChange,className, defaultValue} :
         <label htmlFor={id} className='label-invisible-text' style={{color:theme.text}}>
             {label}
         </label>
-        <div className="container invisible-input gap-xsmr">
-            <p className="prefix-invisible-text">$</p>
-            <input type="number" name={name} id={id} value={value} 
-            className='input-invisible-text' onChange={handleChange} placeholder='insert value'
-            style = {{color:theme.text}} />
-        </div>
-        
+            <input type={inputType} name={name} id={id} value={value} 
+            className='input-invisible-text fullWidth' onChange={handleChange}
+            style = {{color:theme.text}} />        
     </div>
 }
 

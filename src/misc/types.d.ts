@@ -3,10 +3,6 @@ import { DBSchema } from "idb";
 //types
 type inputType = "name" | "frequency" | "category"
 
-interface iScore {
-    label:string,
-    total:number
-}
 
 interface iProducts {
     id?:number;
@@ -14,6 +10,8 @@ interface iProducts {
     frequency:number;
     category:string;
 }
+
+type RequiredProduct = Required<iProducts>
 
 interface iInputForm{
     name:inputType,
@@ -48,9 +46,9 @@ declare global {
 
 export {
     iShoppingDB,
-    iScore,
     iProducts,
     BeforeInstallPromptEvent,
     inputType,
-    iInputForm
+    iInputForm,
+    RequiredProduct
 }

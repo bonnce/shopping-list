@@ -8,7 +8,7 @@ const themes = {
         'thirty' : "#AAEEBB",
         'ten' : "#225533",
         'text' : "#000000",
-        'shadow' : "#0003",
+        'shadow' : "#0005",
         'invert' : "0",
     },
     dark:{

@@ -11,10 +11,10 @@ const InputText = ({name, label, onChange} :
     }
     const {theme} = useContext(Theme)
     return <div className="container column align-start gap-xsm">
-        <label htmlFor={id} className='label-text' style={{color:theme.text}}>
+        <label htmlFor={id} className='label-text'>
             {label}
         </label>
-        <input type="text" name={name} id={id} value={value} 
+        <input type="text" name={name} id={id} value={value} required
         className='input-text' onChange={handleChange}
         style = {{backgroundColor: theme.sixty, border: `2px solid ${theme.ten}`, color:theme.text}} />
     </div>

@@ -1,7 +1,7 @@
 import { IDBPDatabase } from "idb"
 import { themes, Theme, createDB, Database, NAMEDB, useDeferredPrompt, DeferredPrompt} from "misc"
 import { iShoppingDB } from "misc/types"
-import { Summary, InstallAppPage, CreateProduct, ShoppingList, ProductManager } from "pages"
+import { InstallAppPage, CreateProduct, ShoppingList, ProductManager } from "pages"
 import { useEffect, useState } from "react"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 
@@ -31,7 +31,6 @@ const App = ()=>{
                 <Routes>
                     <>
                     <Route index element={<CreateProduct/>} />                
-                    <Route path='/summary' element={<Summary/>} />
                     <Route path='/buildList' element={<ShoppingList/>} />
                     <Route path='/adminProducts' element={<ProductManager/>} />
                     <Route path='/install' element={<InstallAppPage/>} />

@@ -10,7 +10,7 @@ const Form = ({inputs, onSubmit} :
     const handleChange:ChangeEventHandler<HTMLInputElement> = (e)=>{
         const target = e.currentTarget
         const data = {
-            [target.name]:target.value
+            [target.name]: target.name === 'frequency' ? Number(target.value) : target.value
         }
         setFormData((prev)=> ({...prev,...data}))
     }
