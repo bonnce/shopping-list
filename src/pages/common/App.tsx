@@ -6,7 +6,9 @@ import { useEffect, useState } from "react"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 
 const App = ()=>{
-    const [theme,setTheme] = useState(themes.light)
+    const localTheme = localStorage.getItem('theme') as keyof typeof themes
+    const defaultTheme = themes?.[localTheme || 'light'] || themes.light
+    const [theme,setTheme] = useState(defaultTheme)
     const [db,setDB] = useState<IDBPDatabase<iShoppingDB>|null>(null)
     
     const handleDB = async ()=>{
@@ -16,6 +18,7 @@ const App = ()=>{
 
     const handleTheme = ()=>{
         setTheme(t => t===themes.dark ? themes.light : themes.dark)
+        localStorage.setItem('theme', theme===themes.dark ? 'light' : 'dark')
     }
     const [deferredPrompt,setDeferredPrompt] = useDeferredPrompt()
 

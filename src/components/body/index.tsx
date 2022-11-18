@@ -1,6 +1,7 @@
 import React from "react";
 
-const Body = ({children}:{children:React.ReactNode})=><div className="container align-start body">
+const Body = ({children, noGapHeaderBody}:{children:React.ReactNode, noGapHeaderBody?:boolean})=><div className="container align-start body" 
+style={{padding:noGapHeaderBody ? '' : '3em'}}>
     {children}
 </div>
 
