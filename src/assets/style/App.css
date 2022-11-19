@@ -522,6 +522,16 @@
   align-items: stretch;
 }
 
+.send-button{
+  font-size: 3em;
+  font-weight: 600;
+  padding-top: .25em;
+  padding-bottom: .25em;
+  padding-left: .75em;
+  padding-right: .75em;
+  border-radius: .25em;
+}
+
 .install-guide{
   width: 70%;
   padding-bottom: 3em;

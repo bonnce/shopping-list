@@ -19,7 +19,8 @@ const BuildList = ()=>{
         const getAllFilt = async () => {            
             if(db){                
                 const data = await getAll(db, NAMECOLLECTION) as RequiredProduct[]
-                const filtered = filterBy<RequiredProduct>(data, 'category')
+                const sortedData = data.sort((a,b) => b.frequency - a.frequency)
+                const filtered = filterBy<RequiredProduct>(sortedData, 'category')
                 const allCategorires = Object.keys(filtered)
                 setDataf(filtered)
                 setCategories(allCategorires)
