@@ -80,14 +80,6 @@
   justify-content: flex-end;
 }
 
-.red{
-  background-color: #d30;
-}
-
-.green{
-  background-color: #3d0;
-}
-
 .app{
   position: relative;
   width: 100%;
@@ -453,14 +445,81 @@
 .current-item{
   font-size: 7.5em;
   text-transform: capitalize;
+  transform: translateX(150%);
+  
 }
 
 .confirm-button{
-  font-size: 5em;
+  font-size: 2.5em;
   font-weight: 600;
   color: #fff;
   padding: 1em;
   border-radius: .5em;
+  cursor: pointer;
+  transition: border 100ms linear, text-shadow 100ms linear;
+  width: 5em;
+}
+
+.red{
+  background-color: hsl(14, 100%, 43%);
+}
+
+.green{
+  background-color: hsl(106, 100%, 43%);
+}
+
+.confirm-button.red{
+  border-top: 4px solid hsl(30, 33%, 80%);
+  border-left: 5px solid hsl(23, 100%, 27%);
+  border-right: 5px solid hsl(23, 100%, 27%);
+  border-bottom: 8px solid hsl(0, 100%, 17%);
+  text-shadow: 0 1px 3px #000;
+}
+
+.confirm-button.green{
+  border-top: 4px solid 	hsl(90, 33%, 80%);
+  border-left: 5px solid hsl(98, 100%, 27%);
+  border-right: 5px solid hsl(98, 100%, 27%);
+  border-bottom: 8px solid hsl(120, 100%, 17%);
+  text-shadow: 0 1px 3px #000;
+}
+
+.confirm-button.red:active{
+  border-top: 8px solid hsl(21, 56%, 17%);
+  border-left: 7px solid hsl(21, 56%, 30%);
+  border-right: 7px solid hsl(21, 56%, 30%);
+  border-bottom: 4px solid hsl(21, 56%, 45%);
+  text-shadow: none;
+}
+
+.confirm-button.green:active{
+  border-top: 8px solid hsl(96, 56%, 17%);
+  border-left: 7px solid hsl(96, 56%, 30%);
+  border-right: 7px solid hsl(96, 56%, 30%);
+  border-bottom: 4px solid hsl(96, 56%, 45%);
+  text-shadow: none;
+}
+
+.confirm-icon{
+  padding: 0;
+  width: 100%;
+}
+
+.category-button{
+  font-size: 2.5em;
+  font-weight: 500;
+  padding-top: .5em;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: .5em;
+  border-radius: .25em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.category-container{
+  margin-top: 3em;
+  align-items: stretch;
 }
 
 .install-guide{
@@ -497,43 +556,44 @@
 
 
 .fade-in{
-  animation: in 500ms ease forwards;
+  animation: in 300ms ease forwards;
 }
 
 .from-right{
-  animation: from-right 750ms linear forwards;
+  animation: from-right 300ms linear 100ms forwards;
 }
 
 .to-left{
-  animation: to-left 750ms linear forwards;
+  animation: to-left 300ms linear forwards;
 }
 
 .fade-out{
-  animation: out 500ms ease forwards;
+  animation: out 300ms ease forwards;
 }
 
 .appear{
-  animation: in 1s ease forwards;
+  animation: in 300ms ease forwards;
   pointer-events: auto;
   user-select: auto;
 }
 
 .hide{
-  animation: out 1s ease forwards;
+  animation: out 300ms ease forwards;
   pointer-events: none;
   user-select: none;
 }
 
 .vanish{
-  animation: vanish 750ms ease infinite;
+  animation: vanish 300ms ease infinite;
+  transform: translateX(0);
 }
 
 .growUp{
-  animation: growTo30vh 750ms ease-in forwards;
+  animation: growTo30vh 300ms ease-in forwards;
 }
 
 .decrease{
-  animation: decrease30vh 750ms ease-in forwards;
+  animation: decrease30vh 300ms ease-in forwards;
 }
 
 .decrease > *{

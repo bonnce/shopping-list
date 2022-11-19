@@ -21,7 +21,7 @@ const handleDelete = async ()=>{
     if(db){
         await remove(db,NAMECOLLECTION, ele.id)
         setDeleted(true)
-        await timeout(750)
+        await timeout(300)
         handleEvent()
     }
 }

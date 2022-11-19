@@ -34,7 +34,7 @@ const BuildList = ()=>{
         const newCategories = [...categories.slice(0,id), ...categories.slice(id+1)]
         setCategories(newCategories)
         handleAnimation()
-        await timeout(1000)
+        await timeout(300)
         handleAnimation()
         handleStep()
     }
@@ -50,7 +50,7 @@ const BuildList = ()=>{
         else{
         callback(2)
         handleAnimation()
-        await timeout(750)
+        await timeout(300)
         handleAnimation()
         setItemIndex(0)
         handleStep()

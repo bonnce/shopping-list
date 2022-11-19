@@ -16,12 +16,14 @@ const BasicButton = (props:DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElem
         if(buttonRef.current) {
             buttonRef.current.style.backgroundColor=theme.sixty
             buttonRef.current.style.boxShadow=`inset 4px 4px 4px 0 ${theme.shadow}`
+            buttonRef.current.style.color=theme.ten
         }
     }
     const mouseUp = ()=>{
         if(buttonRef.current){
             buttonRef.current.style.backgroundColor=theme.ten
             buttonRef.current.style.boxShadow= `4px 4px 4px 0 ${theme.shadow}`
+            buttonRef.current.style.color=theme.sixty
         }
     }
 
