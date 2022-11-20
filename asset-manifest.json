@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "./static/css/main.bd877a6a.css",
+    "main.js": "./static/js/main.8fd41067.js",
+    "static/js/787.0bd3b402.chunk.js": "./static/js/787.0bd3b402.chunk.js",
+    "service-worker.js": "./service-worker.js",
+    "static/media/sun.svg": "./static/media/sun.9dfb2fd534f4c1e4e2cd570ec6a3c03e.svg",
+    "static/media/cold.svg": "./static/media/cold.fb21a7e440f39e9f4c0172bec90c8903.svg",
+    "static/media/whatsapp.svg": "./static/media/whatsapp.7dc3f3267bee9b39fd8d08466208e48a.svg",
+    "static/media/cross-outlined.svg": "./static/media/cross-outlined.5b3ca0bde3e792674b808dec36c5d12b.svg",
+    "static/media/chrome.svg": "./static/media/chrome.6b9ebd6ff49e606d5c411ba8df136fcc.svg",
+    "static/media/mobileInstall.svg": "./static/media/mobileInstall.3bf0a2cd2903d12a39016541c1c3f6dc.svg",
+    "static/media/loading.svg": "./static/media/loading.36f6e3e5a059ea4b5e00b516adbb7237.svg",
+    "static/media/check-outlined.svg": "./static/media/check-outlined.d40c078f3f8a8608a4730e92e33a52ee.svg",
+    "static/media/redTrash.svg": "./static/media/redTrash.131ea1559ad1186e0c9bec3bc368660b.svg",
+    "static/media/shareIOS.svg": "./static/media/shareIOS.893517054e39882b754ce8a46aad4869.svg",
+    "static/media/search.svg": "./static/media/search.61d2b6d73ce1210ebf4e837023caec2a.svg",
+    "static/media/burger.svg": "./static/media/burger.8aed2b1dd08fe7cd72f136cbfffca673.svg",
+    "static/media/safari.svg": "./static/media/safari.74317acb97c9ef63f0749b16975b8a28.svg",
+    "static/media/desktopDowndload.svg": "./static/media/desktopDowndload.221edceced2dc7871cdda1adbaf4953c.svg",
+    "static/media/kebabMenu.svg": "./static/media/kebabMenu.5a81fdadc22cbf9ad2226cde41451509.svg",
+    "static/media/cross.svg": "./static/media/cross.97aaa770536ee5eaf49dde50d2eb3c60.svg",
+    "index.html": "./index.html",
+    "static/media/squarePlus.svg": "./static/media/squarePlus.fdc1122398a30d49809b7616080459a0.svg",
+    "main.bd877a6a.css.map": "./static/css/main.bd877a6a.css.map",
+    "main.8fd41067.js.map": "./static/js/main.8fd41067.js.map",
+    "787.0bd3b402.chunk.js.map": "./static/js/787.0bd3b402.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bd877a6a.css",
+    "static/js/main.8fd41067.js"
+  ]
+}
