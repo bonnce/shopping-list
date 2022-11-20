@@ -24,11 +24,31 @@ const filterBy = <M>(arr:M[], field:keyof M) =>{
   return maped
 }
 
+const getContacts =async () => {
+  if('contacts' in navigator && 'ContactsManager' in window) {
+    const properties = ['name', 'tel'];
+    const options = {multiple: false};
+    try {
+      const contacts = await navigator.contacts.select(properties, options);
+      return contacts
+    } catch (ex) {
+      // Handle any errors here.
+      console.log('was an error', ex)
+    }
+  }else{
+    return 'Your device does not support contact API'
+  }
+}
+
+const getRawPhone = (phone:string) => phone.replace(/\D/g, '').slice(-10);
+
 export{
   handleTotal,
   handleMenu,
   leftRate,
   timeout,
   deleteEquals,
-  filterBy
+  filterBy,
+  getContacts,
+  getRawPhone
 } 

@@ -332,6 +332,7 @@
 .button{
   transition: background-color 100ms ease, box-shadow 100ms ease ;
   border: none;
+  cursor: pointer;
 }
 
 .button:active{
@@ -530,6 +531,23 @@
   padding-left: .75em;
   padding-right: .75em;
   border-radius: .25em;
+}
+
+.search-button{
+  padding: .25em;
+  border-radius: .5em;
+  font-size: 1.6em;
+  cursor: pointer;
+}
+
+.contact-container input{
+  width: calc(100% - 1.5em);
+}
+
+.error-text{
+  color: #f20;
+  font-size: 1em;
+  font-style: italic;
 }
 
 .install-guide{

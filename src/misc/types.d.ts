@@ -38,10 +38,28 @@ interface BeforeInstallPromptEvent extends Event {
     prompt(): Promise<void>;
 }
 
+interface NavigatorContacts{
+    readonly contacts : ContactsManager
+}
+
+interface ContactSelected {
+    email?:string[];
+    name?:string[];
+    tel?:string[];
+    icon?:string[];
+}
+  
+interface ContactsManager {
+getProperties() : Promise<string[]>;
+select(properties:string[], options?:{multiple:boolean}) : Promise<ContactSelected[]>;
+};
+
+
 declare global {
     interface WindowEventMap {
         beforeinstallprompt: BeforeInstallPromptEvent;
     }
+    interface Navigator extends NavigatorContacts{}
 }
 
 export {
@@ -50,5 +68,6 @@ export {
     BeforeInstallPromptEvent,
     inputType,
     iInputForm,
-    RequiredProduct
+    RequiredProduct,
+    ContactSelected
 }
