@@ -228,7 +228,7 @@
   height: 100vh;
   width: 100vw;
   z-index: 4;
-  transition: opacity ease-in-out .8s;
+  transition: opacity ease-in-out 450ms
 }
 
 .menu{
@@ -239,7 +239,7 @@
   width: 31em;
   height: calc(100% - 4em);
   padding: 2em;
-  transition: left 1s cubic-bezier(.28,.41,.09,.95);
+  transition: left 500ms cubic-bezier(.28,.41,.09,.95);
 }
 
 .menu-title{
@@ -375,12 +375,6 @@
   font-size: 2.75em;
   font-weight: 500;
   width: 12ch;
-}
-
-.usd{
-  font-size: 2.25em;
-  font-weight: 300;
-  color: #848484;
 }
 
 .footer{
