@@ -1,8 +1,8 @@
 import { Theme } from "misc"
 import React, { ChangeEventHandler, useContext, useEffect, useId, useState } from "react"
 
-const InputText = ({name, label, onChange , defaultValue} : 
-    {name:string, label:string, onChange?:ChangeEventHandler<HTMLInputElement>, defaultValue?:string})=>{
+const InputText = ({name, label, list, onChange , defaultValue} : 
+    {name:string, label:string, list?:string, onChange?:ChangeEventHandler<HTMLInputElement>, defaultValue?:string})=>{
     const id = useId()
     const [value,setValue] = useState(defaultValue || '')
     const handleChange:ChangeEventHandler<HTMLInputElement> = (e)=>{
@@ -17,11 +17,11 @@ const InputText = ({name, label, onChange , defaultValue} :
     },[defaultValue])
 
     return <div className="container column align-start gap-xsm">
-        <label htmlFor={id} className='label-text'>
+        <label htmlFor={id} className='label-text' style={{color:theme.text, WebkitTextStrokeColor:theme.ten}}>
             {label}
         </label>
-        <input type="text" name={name} id={id} value={value} required 
-        className='input-text' onChange={handleChange}
+        <input type="text" name={name} id={id} value={value} required autoComplete={list ? 'off' : 'on'}
+        className='input-text' onChange={handleChange} list={list}
         style = {{backgroundColor: theme.sixty, border: `2px solid ${theme.ten}`, color:theme.text}} />
     </div>
 }
