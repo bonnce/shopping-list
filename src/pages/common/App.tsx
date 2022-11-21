@@ -30,7 +30,7 @@ const App = ()=>{
         <Database.Provider value={db}>
         <DeferredPrompt.Provider value={{deferredPrompt,setDeferredPrompt}}>
 
-            <Router>
+            <Router basename="/shopping-list">
                 <Routes>
                     <>
                     <Route index element={<CreateProduct/>} />                

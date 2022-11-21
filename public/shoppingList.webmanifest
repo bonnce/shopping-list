@@ -181,9 +181,9 @@
       "sizes": "1024x1024"
     }
   ],
-  "start_url" : "/",
-  "scope" : "/",
-  "id" :"/",
+  "start_url" : "/shopping-list/",
+  "scope" : "/shopping-list/",
+  "id" :"/shopping-list/",
   "display": "standalone",
   "theme_color" : "#fff",
   "background_color" : "#fff",
