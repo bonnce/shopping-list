@@ -181,6 +181,13 @@
       "sizes": "1024x1024"
     }
   ],
+  "shortcuts":[
+    {
+      "name":"Build List",
+      "description":"Build your shopping list",
+      "url":"/buildList"
+    }
+  ],
   "start_url" : "/shopping-list/",
   "scope" : "/shopping-list/",
   "id" :"/shopping-list/",
