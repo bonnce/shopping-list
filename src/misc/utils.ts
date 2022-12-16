@@ -42,13 +42,38 @@ const getContacts =async () => {
 
 const getRawPhone = (phone:string) => phone.replace(/\D/g, '').slice(-10);
 
-export{
-  handleTotal,
-  handleMenu,
-  leftRate,
-  timeout,
-  deleteEquals,
-  filterBy,
-  getContacts,
-  getRawPhone
+const filterCSV = (fileStr:string, rowLength:number) =>
+fileStr.split(/\s/).map(str => str.split(',').filter(voidStr => voidStr)).filter(voidArr => voidArr.length > rowLength)
+
+const validStr = (str:any) => (typeof str === 'string' || str instanceof String) && str.length > 0 ? str.toString() : null
+
+const validNumber = (num:any) => typeof num === 'number' || !isNaN(Number(num)) ? Number(num) : null
+
+const validateData = (typeFiled: string[], entries:string[][]):(string|number)[][] => 
+entries.map(data => {
+  if(typeFiled.length === data.length){
+    const dataFiltered = typeFiled.map((validType, i) => {
+      if(validType === 'string')
+        return validStr(data[i])
+      if(validType === 'number')
+        return validNumber(data[i])
+      return null
+    } )
+    return dataFiltered
+  }
+  return null
+}
+  ).filter((valid) => valid != null && !valid.includes(null)) as (string|number)[][]
+  
+  export{
+    handleTotal,
+    handleMenu,
+    leftRate,
+    timeout,
+    deleteEquals,
+    filterBy,
+    getContacts,
+    getRawPhone,
+    filterCSV,
+    validateData
 } 

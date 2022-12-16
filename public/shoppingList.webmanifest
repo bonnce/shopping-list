@@ -185,7 +185,7 @@
     {
       "name":"Build List",
       "description":"Build your shopping list",
-      "start_url":"/buildList"
+      "url":"/buildList"
     }
   ],
   "start_url" : "/shopping-list/",

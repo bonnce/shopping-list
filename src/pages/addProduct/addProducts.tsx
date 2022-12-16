@@ -3,6 +3,7 @@ import { Database, getAll, iInputForm, inputType, iProducts, NAMECOLLECTION, Req
 import { deleteEquals } from "misc/utils"
 import { useContext, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import AddCSV from "./addCSV"
 
 const INPUTS: iInputForm[] = [{name:"name",label:'Nombre'}, {name:"frequency",label:'Frecuencia'}, {name:"category",label:'Categoria'}]
 
@@ -18,23 +19,27 @@ const AddProduct = ()=>{
         }
     }
 
-useEffect(()=>{
-    const getAllData = async ()=>{
 
-        if(db){
-            const allData = await getAll(db,NAMECOLLECTION) as RequiredProduct[]
-            const sortedData = allData.sort((a,b) => b.id - a.id)
-            const categories = deleteEquals(sortedData.map(ele => ele.category))
-            setData(categories)
+    useEffect(()=>{
+        const getAllData = async ()=>{
+
+            if(db){
+                const allData = await getAll(db,NAMECOLLECTION) as RequiredProduct[]
+                const sortedData = allData.sort((a,b) => b.id - a.id)
+                const categories = deleteEquals(sortedData.map(ele => ele.category))
+                setData(categories)
+            }
         }
-    }
-    getAllData()
-},[db])
-return <Card className='card-form'>
-    <div className="container column gap-md">
-        <h2 className="form-title">Nuevo Producto</h2>
-        <Form inputs={INPUTS} autoComplete={autoComplete} data={data} onSubmit={handleSubmit}/>
-    </div>
-</Card>
+        getAllData()
+    },[db])
+    return (
+    <Card className='card-form'>
+        <div className="container column gap-md">
+            <h2 className="form-title">Nuevo Producto</h2>
+            <Form inputs={INPUTS} autoComplete={autoComplete} data={data} onSubmit={handleSubmit}>
+            <AddCSV/>
+            </Form>
+        </div>
+    </Card>)
 }
 export default AddProduct

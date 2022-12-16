@@ -1,9 +1,11 @@
 import { Theme } from "misc"
-import { useContext, useRef } from "react"
+import { InputHTMLAttributes, useContext, useRef } from "react"
 
-const InputButton = ({name} : {name:string}) => {
+const InputButton = (props: InputHTMLAttributes<HTMLInputElement>) => {
+    const {className, ...restProps} = props
     const {theme} = useContext(Theme)
     const buttonRef = useRef<HTMLInputElement>(null);
+    const newClassName = `input-button ${className}`
     const mouseDown = ()=>{
         if(buttonRef.current) {
             buttonRef.current.style.backgroundColor=theme.sixty
@@ -19,7 +21,7 @@ const InputButton = ({name} : {name:string}) => {
         }
     }
 
-    return <input ref={buttonRef} type="submit" className="input-button" value={name} 
+    return <input ref={buttonRef} className={newClassName} {...restProps} 
     onMouseDown={mouseDown} onMouseUp={mouseUp} onMouseLeave={mouseUp} onTouchStart={mouseDown} onTouchEnd={mouseUp}
     style={{backgroundColor:theme.ten,color:theme.sixty, boxShadow: `0px 4px 4px 0 ${theme.shadow}`}} />
 }

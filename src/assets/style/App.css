@@ -36,6 +36,10 @@
   width: 100%;
 }
 
+.justify-between{
+  justify-content: space-between;
+}
+
 .column{
   flex-direction: column;
 }
@@ -74,6 +78,10 @@
 
 .align-end{
   align-items: flex-end;
+}
+
+.wrap{
+  flex-wrap: wrap;
 }
 
 .justify-end{
@@ -167,6 +175,7 @@
 }
 
 .input-button{
+  float: left;
   font-size: 2.5em;
   font-weight: 400;
   font-family: inherit;
@@ -179,6 +188,7 @@
   border-radius: .25em;
   border: none;
   transition: background-color 100ms ease, box-shadow 100ms ease ;
+  text-align: center;
   text-shadow: 2px 1px 2px #000a;
 }
 
@@ -540,8 +550,45 @@
 
 .error-text{
   color: #f20;
-  font-size: 1em;
+  font-size: 1.3em;
   font-style: italic;
+}
+
+.success-text{
+  color: #1ca800;
+  font-size: 1.3em;
+  font-style: italic;
+}
+
+/* .notification-card-content{
+  border: 1px solid #000;
+  background-color: #eee;
+  width: 100%;
+  align-items: flex-start;
+} */
+
+.notification-card-container{
+  position: absolute;
+  right: 2px;
+  top: 5%;
+  font-size: 2em;
+  z-index: 5;
+  width: 30ch;
+}
+
+.notif-length{
+  align-self: flex-end;
+  font-size: .8em;
+}
+
+.notification-card{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 2em);
+  padding: 1em;
+  border-radius: .25em;
+  border: 1px solid #1ca800;
 }
 
 .install-guide{
@@ -576,6 +623,10 @@
   top:.1em;
 }
 
+input[type=file]{
+  display: none;
+}
+
 
 .fade-in{
   animation: in 300ms ease forwards;
@@ -583,6 +634,10 @@
 
 .from-right{
   animation: from-right 300ms linear 100ms forwards;
+}
+
+.to-right{
+  animation: to-right 300ms linear 100ms forwards;
 }
 
 .to-left{
@@ -669,6 +724,25 @@
     transform: translateX(0);
   }
 }
+
+@keyframes to-right {
+  0%{
+    transform: skewX(0);
+    transform: translateX(0);
+    visibility: visible;
+  }
+  99%{
+    /* display: none; */
+    visibility: visible;
+  }
+  100%{
+    transform: skewX(-15deg);
+    transform: translateX(150%);
+    visibility: hidden;
+  }
+
+}
+
 
 @keyframes to-left {
   0%{

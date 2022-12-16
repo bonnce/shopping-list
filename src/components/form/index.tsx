@@ -1,10 +1,11 @@
 import { InputText, InputButton } from "components"
 import AutoComplete from "components/input/autocomplete"
 import { iProducts, iInputForm, inputType } from "misc"
-import { ChangeEventHandler, FormEventHandler, useState } from "react"
+import { ChangeEventHandler, FormEventHandler, ReactNode, useState } from "react"
 
-const Form = ({inputs, autoComplete, data, onSubmit} : 
-    {inputs:iInputForm[], autoComplete:inputType[], data:string[] | undefined, onSubmit?:(form:iProducts)=>void}) => {
+const Form = ({inputs, autoComplete, data, children, onSubmit, handleFile} : 
+    {inputs:iInputForm[], autoComplete:inputType[], data:string[] | undefined, children?:ReactNode
+    onSubmit?:(form:iProducts)=>void, handleFile?:ChangeEventHandler<HTMLInputElement>}) => {
 
     const [formData,setFormData] = useState<iProducts>({name:'', frequency:0 ,category:''})
 
@@ -26,7 +27,10 @@ const Form = ({inputs, autoComplete, data, onSubmit} :
         {autoComplete.includes(obj.name) && data && <AutoComplete key={`${obj.name}${autoComplete.indexOf(obj.name)}`} values={data} id={obj.name} />} 
         </>
         )}
-        <InputButton name="Agregar" />
+        <div className="container justify-between wrap fullWidth">
+            <InputButton value="Agregar" type="submit"/>
+            {children}
+        </div>
     </form>
 }
 export default Form
