@@ -1,9 +1,7 @@
 import { Database, getAll, NAMECOLLECTION, RequiredProduct, timeout } from "misc"
 import { filterBy } from "misc/utils"
 import { MouseEventHandler, useContext, useEffect, useState } from "react"
-import BlackBar from "./blackBar"
 import CategorySelection from "./categorySelection"
-import CurrentItem from "./currentItem"
 import ItemDecision from "./itemDecision"
 
 const BuildList = ()=>{
@@ -58,6 +56,18 @@ const BuildList = ()=>{
     }
     }
 
+    const handleRestart = ()=> {
+        if(dataFiltered){
+            setList({})
+            const allCategorires = Object.keys(dataFiltered)
+            setCategories(allCategorires)
+        }
+    }
+
+    const handleEnd = ()=> {
+        setCategories([])
+    }
+
     const addTolist = ()=>{
         const item = dataFiltered?.[currentCategory][itemIndex]
         if(item){
@@ -68,7 +78,8 @@ const BuildList = ()=>{
 
     return <>{dataFiltered && (!changeStep ?
         <ItemDecision start={waitAnimation} item={dataFiltered[currentCategory][itemIndex]} handleSkip={handleItemCount} handleSuccess={addTolist}  />  :
-        <CategorySelection start={waitAnimation} categories={categories} handleClick={selectCategory} list={list} />)
+        <CategorySelection start={waitAnimation} categories={categories} handleRestart={handleRestart} handleEnd={handleEnd}
+        handleClick={selectCategory} list={list} />)
     }</>
 }
 export default BuildList

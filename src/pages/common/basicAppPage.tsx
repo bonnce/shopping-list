@@ -1,4 +1,4 @@
-import { Body, Header, Menu } from "components";
+import { Body, Header } from "components";
 import React from "react";
 import { useContext } from "react";
 import { Theme } from "misc";

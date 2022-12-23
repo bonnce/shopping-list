@@ -9,7 +9,9 @@ const BasicButton = (props:DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElem
     const {theme} = useContext(Theme)
 
     const newClassName = `container button ${className || ''}`
-    const newStyles = {...style, backgroundColor:theme.ten,color:theme.sixty,boxShadow: `4px 4px 4px 0 ${theme.shadow}`}
+    const backgroundColor = style?.backgroundColor || theme.ten
+    const color = style?.color || theme.sixty
+    const newStyles = {...style, backgroundColor,color,boxShadow: `4px 4px 4px 0 ${theme.shadow}`}
 
     const buttonRef = useRef<HTMLButtonElement>(null);
     const mouseDown = ()=>{
@@ -21,9 +23,9 @@ const BasicButton = (props:DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElem
     }
     const mouseUp = ()=>{
         if(buttonRef.current){
-            buttonRef.current.style.backgroundColor=theme.ten
+            buttonRef.current.style.backgroundColor=backgroundColor
             buttonRef.current.style.boxShadow= `4px 4px 4px 0 ${theme.shadow}`
-            buttonRef.current.style.color=theme.sixty
+            buttonRef.current.style.color=color
         }
     }
 
