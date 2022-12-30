@@ -16,7 +16,8 @@ const AddCSV = () => {
     const handleFile:ChangeEventHandler<HTMLInputElement> = async (e)=>{
         setLoading(true)
         const file = e.target.files?.[0]
-        if(file && file.type === 'text/csv'){
+        const csvExtension = file?.name.match(/\.csv$/)
+        if(file && (file.type === 'text/csv' || file.type === 'text/comma-separated-values' || csvExtension)){
 
             const fileStr = await file.text()
             const filteredStr = filterCSV(fileStr, 2)

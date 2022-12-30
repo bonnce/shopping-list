@@ -25,12 +25,12 @@ const CategorySelection = (props:iCategory) => {
         categories.map((cat, i) =>
         <BasicButton className="category-button" key={cat} id={i.toString()} onClick={handleClick}>{cat}</BasicButton>)
     }
-    <div className="container column action-buttons-container gap-md">
-        <BasicButton className="category-button action-buttons" id={'finish'} style={{backgroundColor: '#a21904'}}
-        onClick={handleEnd}>Cerrar Lista</BasicButton>
-        <BasicButton className="category-button action-buttons" id={'restart'}
+    {(categories.length < 1 && !start ) ||
+        <BasicButton className="category-button action-buttons" id={'finish'} style={{backgroundColor: '#a21904', right:'5%'}}
+        onClick={handleEnd}>Finalizar</BasicButton>
+    }
+        <BasicButton className="category-button action-buttons" id={'restart'} style={{left:'5%'}}
         onClick={handleRestart}>Restart</BasicButton>
-    </div>
 </div>}
 
 export default CategorySelection

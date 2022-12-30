@@ -527,14 +527,10 @@
   align-items: stretch;
 }
 
-.action-buttons-container{
-  position: absolute;
-  right: 5%;
-  top: 10%;
-  font-size: .8em;
-}
-
 .action-buttons{
+  position: absolute;
+  font-size: 1.5em;
+  bottom: 5%;
   width: 5em;
   height: 5em;
   word-wrap: break-word;
