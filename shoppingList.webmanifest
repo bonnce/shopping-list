@@ -185,7 +185,14 @@
     {
       "name":"Build List",
       "description":"Build your shopping list",
-      "url":"/buildList"
+      "url":"buildList",
+      "icons":[
+        {
+          "src": "logo96.png",
+          "type": "image/png",
+          "sizes": "96x96"
+        }
+      ]
     }
   ],
   "start_url" : "/shopping-list/",
