@@ -5,7 +5,7 @@ import { useContext, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import AddCSV from "./addCSV"
 
-const INPUTS: iInputForm[] = [{name:"name",label:'Nombre'}, {name:"frequency",label:'Frecuencia'}, {name:"category",label:'Categoria'}]
+const INPUTS: iInputForm[] = [{name:"name",label:'Nombre'}, {name:"frequency",type:"number",label:'Prioridad'}, {name:"category",label:'Categoria'}]
 
 const AddProduct = ()=>{
     const autoComplete:inputType[] = ['category']

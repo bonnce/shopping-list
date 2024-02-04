@@ -22,7 +22,7 @@ const Form = ({inputs, autoComplete, data, children, onSubmit, handleFile} :
     }
     return <form className="container column gap-md" onSubmit={handleSubmit}>
         {inputs.map((obj) => <>
-        <InputText name={obj.name} label={obj.label} key={`${obj.name}${obj.label}`} 
+        <InputText name={obj.name} type={obj?.type} label={obj.label} key={`${obj.name}${obj.label}`} 
         list={autoComplete.includes(obj.name) ? obj.name : undefined} onChange={handleChange} />  
         {autoComplete.includes(obj.name) && data && <AutoComplete key={`${obj.name}${autoComplete.indexOf(obj.name)}`} values={data} id={obj.name} />} 
         </>

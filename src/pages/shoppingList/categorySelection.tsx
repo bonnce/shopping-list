@@ -23,10 +23,10 @@ const CategorySelection = (props:iCategory) => {
     {categories.length < 1 && !start  ?
         <SendShoppingList list={list} /> :
         categories.map((cat, i) =>
-        <BasicButton className="category-button" key={cat} id={i.toString()} onClick={handleClick}>{cat}</BasicButton>)
+        <BasicButton className="category-button" themeColor="thirty" key={cat} id={i.toString()} onClick={handleClick}>{cat}</BasicButton>)
     }
     {(categories.length < 1 && !start ) ||
-        <BasicButton className="category-button action-buttons" id={'finish'} style={{backgroundColor: '#a21904', right:'5%'}}
+        <BasicButton className="category-button action-buttons" id={'finish'} style={{backgroundColor: '#a21904', color:'#fff', right:'5%'}}
         onClick={handleEnd}>Finalizar</BasicButton>
     }
         <BasicButton className="category-button action-buttons" id={'restart'} style={{left:'5%'}}

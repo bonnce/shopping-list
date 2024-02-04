@@ -15,7 +15,8 @@ type RequiredProduct = Required<iProducts>
 
 interface iInputForm{
     name:inputType,
-    label:string
+    label:string,
+    type?:string
 }
 
 //Schema
