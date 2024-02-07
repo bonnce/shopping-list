@@ -4,9 +4,9 @@ import { BeforeInstallPromptEvent, iShoppingDB } from './types'
 
 const themes = {
     light:{
-        'sixty' : "#F5FFF5",
-        'thirty' : "#AAEEBB",
-        'ten' : "#225533",
+        'sixty' : "#F0F0FF",
+        'thirty' : "#CBF0E0",
+        'ten' : "#336644",
         'text' : "#000000",
         'shadow' : "#0005",
         'invert' : "0",

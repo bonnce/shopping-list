@@ -111,7 +111,7 @@
 
 .header h1{
   font-size: 2.5em;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .icon-2x2{
@@ -141,7 +141,7 @@
 
 .card{
   padding: 1.5em;
-  border-radius: .75em;
+  border-radius: 25px;
 }
 
 .card-form{
@@ -152,32 +152,33 @@
 .label-text{
   font-size: 1.75em;
   color: #949494;
-  font-weight: 600;
-  border-bottom: 1px solid #0005;
-  border-right: 1px solid #0005;
+  font-weight: 300;
   padding: .25em;
-  border-radius: .25em;
-  -webkit-text-stroke-width: .03em;
-  -webkit-text-stroke-color: #000d;
+  transform: scale(1.5) translate(25%, 100%);
+  transition: transform 250ms ease-in-out;
 }
 
 .input-text{
   font-size: 2.5em;
   font-family: inherit;
-  font-weight: 300;
+  font-weight: 400;
   padding-left: .6em;
   padding-right: .6em;
   padding-top: .4em;
   padding-bottom: .4em;
   border-radius: .5em .5em 0 0;
   width: 17em;
-  box-shadow: inset 0 -2px 3px #0007;
+  box-shadow: inset 0 -1px 5px #0003;
+}
+
+.label-text:has(+ .input-text:focus), .label-text:has(+ :not(.input-text[value=""])){
+  transform: none;
 }
 
 .input-button{
   float: left;
   font-size: 2.5em;
-  font-weight: 400;
+  font-weight: 500;
   font-family: inherit;
   padding-left: .8em;
   padding-right: .8em;
@@ -189,7 +190,6 @@
   border: none;
   transition: background-color 100ms ease, box-shadow 100ms ease ;
   text-align: center;
-  text-shadow: 2px 1px 2px #000a;
 }
 
 .input-button:active{
@@ -254,7 +254,7 @@
 
 .menu-title{
   font-size: 3em;
-  font-weight: 600;
+  font-weight: 800;
   text-transform: uppercase;
   word-wrap: break-word;
   width:12ch;
@@ -317,7 +317,7 @@
 
 .collapse-title > h2{
   font-size: 3em;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
 }
 
@@ -340,6 +340,7 @@
 }
 
 .button{
+  font-family: inherit;
   transition: background-color 100ms ease, box-shadow 100ms ease ;
   border: none;
   cursor: pointer;
@@ -431,14 +432,16 @@
   width: 100%;
   height: 100%;
   justify-content: space-between;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .shopping-blackBars{
   position: relative;
   width: 100%;
-  background-color: #000b;
+  background-color: #000;
+  box-shadow: 0 0 25px 10px #000;
   justify-content: space-around;
+  z-index: 1;
 }
 
 .shopping-blackBars > h2{
@@ -451,18 +454,46 @@
   font-size: 7.5em;
   text-transform: capitalize;
   transform: translateX(150%);
-  
+  text-align: center;
 }
 
 .confirm-button{
   font-size: 2.5em;
-  font-weight: 600;
   color: #fff;
   padding: 1em;
-  border-radius: .5em;
+  border-radius: 50%;
   cursor: pointer;
-  transition: border 100ms linear, text-shadow 100ms linear;
   width: 5em;
+  position: relative;
+  z-index: 1;
+  &::after,&::before{
+    content: "";
+    position: absolute;
+    background-color: inherit;
+    border-radius: inherit;
+    z-index: -1;
+    transition: box-shadow 100ms linear, text-shadow 100ms linear;
+  }
+  &::after{
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    box-shadow: 0 0 0px 2px #eeec, 0 0 0px 3px #000, inset 0 0 0px 2px #eee8, 0 0 0px 6px #000a, 0 5px 0px 5px #0005,  inset  0 0 0px 7px #ddd5,  inset  0 15px 5px 8px #2222;
+  }
+  &::before{
+    width: 130%;
+    height: 130%;
+    left: -15%;
+    top: -15%;
+    box-shadow: inset  0 2px 0px 2px #fff8, inset  0 -2px 0px 2px #0005;
+  }
+  &:hover::after{
+    box-shadow: 0 0 0px 2px #eeec, 0 0 0px 3px #000, inset 0 0 0px 2px #eee8, 0 0 0px 6px #0008, 0 5px 0px 5px #0005,  inset  0 0 0px 7px #ddd5,  inset  0 5px 5px 5px #2222;
+  }
+  &:active::after{
+    box-shadow: 0 0 0px 0px #eeec, 0 0 0px 3px #000, inset 0 0 0px 2px #eee5, 0 0 0px 6px #0008, 0 0px 0px 0px #0005,  inset  0 0 0px 7px #ddd5,  inset  0 5px 5px 5px #2222;
+  }
 }
 
 .red{
@@ -471,38 +502,6 @@
 
 .green{
   background-color: hsl(106, 100%, 43%);
-}
-
-.confirm-button.red{
-  border-top: 4px solid hsl(30, 33%, 80%);
-  border-left: 5px solid hsl(23, 100%, 27%);
-  border-right: 5px solid hsl(23, 100%, 27%);
-  border-bottom: 8px solid hsl(0, 100%, 17%);
-  text-shadow: 0 1px 3px #000;
-}
-
-.confirm-button.green{
-  border-top: 4px solid 	hsl(90, 33%, 80%);
-  border-left: 5px solid hsl(98, 100%, 27%);
-  border-right: 5px solid hsl(98, 100%, 27%);
-  border-bottom: 8px solid hsl(120, 100%, 17%);
-  text-shadow: 0 1px 3px #000;
-}
-
-.confirm-button.red:active{
-  border-top: 8px solid hsl(21, 56%, 17%);
-  border-left: 7px solid hsl(21, 56%, 30%);
-  border-right: 7px solid hsl(21, 56%, 30%);
-  border-bottom: 4px solid hsl(21, 56%, 45%);
-  text-shadow: none;
-}
-
-.confirm-button.green:active{
-  border-top: 8px solid hsl(96, 56%, 17%);
-  border-left: 7px solid hsl(96, 56%, 30%);
-  border-right: 7px solid hsl(96, 56%, 30%);
-  border-bottom: 4px solid hsl(96, 56%, 45%);
-  text-shadow: none;
 }
 
 .confirm-icon{
@@ -531,8 +530,10 @@
   position: absolute;
   font-size: 1.5em;
   bottom: 5%;
-  width: 5em;
-  height: 5em;
+  letter-spacing: .1em;
+  font-weight: 500;
+  width: 7em;
+  height: 7em;
   word-wrap: break-word;
   border-radius: 50% 50%;
 }
@@ -569,13 +570,6 @@
   font-size: 1.3em;
   font-style: italic;
 }
-
-/* .notification-card-content{
-  border: 1px solid #000;
-  background-color: #eee;
-  width: 100%;
-  align-items: flex-start;
-} */
 
 .notification-card-container{
   position: absolute;
@@ -687,12 +681,43 @@ input[type=file]{
   visibility: hidden;
 }
 
+.dust-wind{
+  position: absolute;
+  left: 0;
+  translate: 0 0;
+  object-fit: contain;
+  width: 100vw;
+  z-index: 0;
+  animation: through-window 10s linear infinite;
+
+}
+
 @keyframes out {
   from{
     opacity: 1;
   }
   to{
     opacity: 0;
+  }
+}
+
+@keyframes through-window {
+  0%{
+    translate: 100vw 0;
+    opacity: 1;
+  }
+  20%,60%{
+    opacity: 0;
+    filter: blur(5px);
+  }
+  30%{
+    opacity: .7;
+    filter: blur(1px);
+  }
+
+  100%{
+    translate: -100vw 0;
+    rotate: 15deg;
   }
 }
 
@@ -742,7 +767,6 @@ input[type=file]{
     visibility: visible;
   }
   99%{
-    /* display: none; */
     visibility: visible;
   }
   100%{
@@ -806,8 +830,20 @@ input[type=file]{
   }
 }
 
-/* @media (min-width: 2048px) {
-  .app{
-    font-size: 1.2em;
+@media (max-width: 960px) {
+  .current-item{
+    font-size: 5em;
   }
-} */
+  .confirm-button{
+    font-size: 2.25em;
+  }
+}
+
+@media (max-width: 470px) {
+  .current-item{
+    font-size: 3em;
+  }
+  .confirm-button{
+    font-size: 2em;
+  }
+}

@@ -27,7 +27,7 @@ const handleDelete = async ()=>{
 }
 
 return <div className = {`container-grid col-5 fullWidth ${deleted ? 'vanish': ''}`}>
-    <InvisibleInput onChange={handleChange} className="col-1x4" name='name' label="name" defaultValue={ele.name} />
-    <InvisibleInput onChange={handleChange} name='frequency' label="frequency" defaultValue={ele.frequency.toString()} />
+    <InvisibleInput onChange={handleChange} className="col-1x4" name='name' label="nombre" defaultValue={ele.name} />
+    <InvisibleInput onChange={handleChange} name='frequency' label="prioridad" defaultValue={ele.frequency.toString()} />
     <TrashButton onClick={handleDelete}/>
 </div>}
