@@ -111,7 +111,7 @@
 
 .header h1{
   font-size: 2.5em;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .icon-2x2{
@@ -152,7 +152,7 @@
 .label-text{
   font-size: 1.75em;
   color: #949494;
-  font-weight: 400;
+  font-weight: 300;
   padding: .25em;
   transform: scale(1.5) translate(25%, 100%);
   transition: transform 250ms ease-in-out;
@@ -161,7 +161,7 @@
 .input-text{
   font-size: 2.5em;
   font-family: inherit;
-  font-weight: 300;
+  font-weight: 400;
   padding-left: .6em;
   padding-right: .6em;
   padding-top: .4em;
@@ -178,7 +178,7 @@
 .input-button{
   float: left;
   font-size: 2.5em;
-  font-weight: 600;
+  font-weight: 500;
   font-family: inherit;
   padding-left: .8em;
   padding-right: .8em;
@@ -254,7 +254,7 @@
 
 .menu-title{
   font-size: 3em;
-  font-weight: 600;
+  font-weight: 800;
   text-transform: uppercase;
   word-wrap: break-word;
   width:12ch;
@@ -317,7 +317,7 @@
 
 .collapse-title > h2{
   font-size: 3em;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
 }
 
@@ -340,6 +340,7 @@
 }
 
 .button{
+  font-family: inherit;
   transition: background-color 100ms ease, box-shadow 100ms ease ;
   border: none;
   cursor: pointer;
@@ -458,7 +459,6 @@
 
 .confirm-button{
   font-size: 2.5em;
-  font-weight: 600;
   color: #fff;
   padding: 1em;
   border-radius: 50%;
@@ -530,8 +530,10 @@
   position: absolute;
   font-size: 1.5em;
   bottom: 5%;
-  width: 6em;
-  height: 6em;
+  letter-spacing: .1em;
+  font-weight: 500;
+  width: 7em;
+  height: 7em;
   word-wrap: break-word;
   border-radius: 50% 50%;
 }
