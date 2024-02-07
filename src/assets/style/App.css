@@ -431,14 +431,16 @@
   width: 100%;
   height: 100%;
   justify-content: space-between;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .shopping-blackBars{
   position: relative;
   width: 100%;
   background-color: #000;
+  box-shadow: 0 0 25px 10px #000;
   justify-content: space-around;
+  z-index: 1;
 }
 
 .shopping-blackBars > h2{
@@ -677,12 +679,43 @@ input[type=file]{
   visibility: hidden;
 }
 
+.dust-wind{
+  position: absolute;
+  left: 0;
+  translate: 0 0;
+  object-fit: contain;
+  width: 100vw;
+  z-index: 0;
+  animation: through-window 10s linear infinite;
+
+}
+
 @keyframes out {
   from{
     opacity: 1;
   }
   to{
     opacity: 0;
+  }
+}
+
+@keyframes through-window {
+  0%{
+    translate: 100vw 0;
+    opacity: 1;
+  }
+  20%,60%{
+    opacity: 0;
+    filter: blur(5px);
+  }
+  30%{
+    opacity: .7;
+    filter: blur(1px);
+  }
+
+  100%{
+    translate: -100vw 0;
+    rotate: 15deg;
   }
 }
 

@@ -5,6 +5,7 @@ import BlackBar from "./blackBar"
 import CurrentItem from "./currentItem"
 import check from 'assets/images/check-outlined.svg'
 import cross from 'assets/images/cross-outlined.svg'
+import { DustWind } from "components/dust"
 
 const ItemDecision = ({start, item, handleSkip, handleSuccess}: {start:boolean, item:RequiredProduct, handleSkip:(callback:(param:0|1|-1|2)=>void)=>void,
 handleSuccess:VoidFunction})=> {
@@ -27,6 +28,7 @@ handleSuccess:VoidFunction})=> {
 <BlackBar start={start}>
 <h2>{item.category}</h2>
 </BlackBar>
+<DustWind />
 {success === 2 || <CurrentItem item={item.name} success={success}  />}
 <BlackBar start={start}>
     <button className="confirm-button green" onClick={handleAccept}>
