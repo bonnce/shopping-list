@@ -21,7 +21,7 @@ const NotificationContainer = (props:iNotifContainer) => {
 <div className="notification-card-container">
 
 {cards.map((validData, i) =>
-<CardNotification key={validData} onClick={handleClick}>
+<CardNotification key={validData + i} onClick={handleClick} >
     <p className="success-text">{validData}</p> 
     <p className="notif-length">{`Guardado - ${i+1}/${dataLength}`}</p> 
 </CardNotification>

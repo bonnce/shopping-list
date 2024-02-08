@@ -1,4 +1,5 @@
 import { LoadingIcon } from "components";
+import Tooltip from "components/card/tooltip";
 import Error from "components/error";
 import InputFile from "components/input/inputFile";
 import NotificationContainer from "components/notification/cardContainerNotf";
@@ -30,11 +31,12 @@ const AddCSV = () => {
                         frequency:Number(data[1]),
                         category:data[2].toString()
                     }
-                    await save(db,NAMECOLLECTION,product)
+                    const result = await save(db,NAMECOLLECTION,product)
+                    if(result)
                     return product.name
 
                 }))
-                setValidDataSaved(dataSaved)
+                setValidDataSaved(dataSaved.filter(i => i != null) as string[])
                 setErrorUpload(undefined)
                 setLoading(false)
             }
@@ -50,8 +52,12 @@ const AddCSV = () => {
 
     return ( 
     <div className="container column gap-sm">
-
-        <InputFile onChange={handleFile}>
+        <InputFile onChange={handleFile} className="relative tooltip-container">
+            <Tooltip>
+                CSV ejemplo:
+                <br />
+                Nombre,Prioridad,Categoria
+            </Tooltip>
             {(loading && <LoadingIcon />) || 'Cargar CSV'}
         </InputFile>
         {errorUpload && <Error>

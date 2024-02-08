@@ -24,7 +24,7 @@ interface iShoppingDB extends DBSchema{
     products: {
         value: iProducts;
         key: number;
-        indexes: { category: string };
+        indexes: { idx: string };
     };
 }
 

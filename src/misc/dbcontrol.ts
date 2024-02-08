@@ -14,7 +14,7 @@ const createDB = async (nameDB:string)=>{
                         autoIncrement: true,
                         keyPath: 'id'
                     })
-                    storeProduct.createIndex(INDEXCOLLECTION,INDEXCOLLECTION)
+                    storeProduct.createIndex(INDEXCOLLECTION,['category','name'],{unique:true})
             }
         }
     })
@@ -63,7 +63,7 @@ const save = async (db:IDBPDatabase<iShoppingDB>,nameColl:typeof NAMECOLLECTION,
         await tx.done
         return key
     }catch(e){
-        console.error('there is an error with remove method: ',e)
+        console.error('there is an error with add method: ',e)
         return null
     }
 }
@@ -106,6 +106,16 @@ const update = async (db:IDBPDatabase<iShoppingDB>,nameColl:typeof NAMECOLLECTIO
     }
 }
 
+const clear = async (db:IDBPDatabase<iShoppingDB>,nameColl:typeof NAMECOLLECTION)=>{
+    try{
+        db.clear(nameColl)
+        return 'done'
+    }catch(e){
+        console.error('there is an error with update method: ',e)
+        return null
+    }
+}
+
 export {
     createDB,
     get,
@@ -113,4 +123,5 @@ export {
     save,
     remove,
     update,
+    clear
 }

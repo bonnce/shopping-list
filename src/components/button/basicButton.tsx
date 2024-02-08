@@ -13,7 +13,6 @@ const BasicButton = (props:DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElem
     const newClassName = `container button ${className || ''}`
     const backgroundColor = style?.backgroundColor || themeBackground
     const color = style?.color || (themeColor ? theme.ten : theme.sixty)
-    console.log(restProps.id + ' ' + color + style?.color)
     const newStyles = {...style, backgroundColor,color,boxShadow: `0 2px 5px 2px ${theme.sixty}, 0 5px 8px 0px ${themeBackground}55`}
 
     const buttonRef = useRef<HTMLButtonElement>(null);

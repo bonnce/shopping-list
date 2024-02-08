@@ -88,6 +88,10 @@
   justify-content: flex-end;
 }
 
+.relative{
+  position: relative;
+}
+
 .app{
   position: relative;
   width: 100%;
@@ -249,7 +253,7 @@
   width: 31em;
   height: calc(100% - 4em);
   padding: 2em;
-  transition: left 500ms cubic-bezier(.28,.41,.09,.95);
+  transition: left 300ms cubic-bezier(.28,.41,.09,.95);
 }
 
 .menu-title{
@@ -313,6 +317,8 @@
   border-radius: 1em;
   cursor:pointer;
   z-index: 2;
+  position: sticky;
+  top: -3em;
 }
 
 .collapse-title > h2{
@@ -325,9 +331,11 @@
   position: relative;
   top: -.75em;
   width: calc(100% - 2.5em);
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   transition: max-height .5s ease, padding .4s ease;
   z-index: 1;
+  justify-content: flex-start;
 }
 
 .collapsed-open > *{
@@ -555,6 +563,15 @@
   cursor: pointer;
 }
 
+.clear-button{
+  font-size: 3em;
+  width: 80%;
+  padding: .3em;
+  font-weight: 600;
+  letter-spacing: .2em;
+  border-radius: calc(1em / 3);
+}
+
 .contact-container input{
   width: calc(100% - 1.5em);
 }
@@ -573,11 +590,12 @@
 
 .notification-card-container{
   position: absolute;
-  right: 2px;
+  right: .3em;
   top: 5%;
   font-size: 2em;
   z-index: 5;
   width: 30ch;
+  filter: drop-shadow( -2px 2px 2px #0005);
 }
 
 .notif-length{
@@ -593,6 +611,18 @@
   padding: 1em;
   border-radius: .25em;
   border: 1px solid #1ca800;
+  box-shadow: none;
+}
+
+.add-notif{
+  font-size: 1.3em;
+  top: 5%;
+  left: auto;
+  right: .5em;
+  padding: 1em 2.5em;
+  width: fit-content;
+  max-width: 20ch;
+  z-index: 5;
 }
 
 .install-guide{
@@ -690,6 +720,25 @@ input[type=file]{
   z-index: 0;
   animation: through-window 10s linear infinite;
 
+}
+
+.tooltip{
+  position: absolute;
+  top:calc(100% + 1em);
+  left:50%;
+  translate: -50% -1em;
+  font-size: .5em;
+  padding: 1em;
+  border-radius: 5px;
+  pointer-events: none;
+  user-select: none;
+  visibility: hidden;
+  transition: translate .1s linear;
+}
+
+.tooltip-container:hover .tooltip{
+  visibility: visible;
+  translate: -50% 0;
 }
 
 @keyframes out {

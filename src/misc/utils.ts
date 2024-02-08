@@ -1,3 +1,5 @@
+import { iProducts } from "./types"
+
 function handleMenu (size:string, callback?:void):void {
     const menu:HTMLDivElement|null = document.querySelector('.menu')
     if(menu)
@@ -65,6 +67,25 @@ entries.map(data => {
 }
   ).filter((valid) => valid != null && !valid.includes(null)) as (string|number)[][]
   
+  const productsToCSV = (products:iProducts[]) =>{
+    let csv = 'nombre,prioridad,categoria\n';
+    products.forEach(product => { csv += `${product.name},${product.frequency},${product.category}\n` });
+    return csv;
+  }
+
+  function downloadCSV(csv:string, filename:string) {
+    const csvData = new Blob([csv], { type: 'text/csv' });
+    const csvURL = window.URL.createObjectURL(csvData);
+    
+    const link = document.createElement('a');
+    link.href = csvURL;
+    link.setAttribute('download', filename);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(csvURL);
+}
+
   export{
     handleTotal,
     handleMenu,
@@ -75,5 +96,7 @@ entries.map(data => {
     getContacts,
     getRawPhone,
     filterCSV,
-    validateData
+    validateData,
+    productsToCSV,
+    downloadCSV
 } 
