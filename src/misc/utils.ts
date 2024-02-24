@@ -87,7 +87,7 @@ entries.map(data => {
 }
 
   function textParserToObj(str:string):{[key:string]:string[]}{
-    const regex: RegExp = /-(\w+)-\n(.*?)(?=\n-|$)/gs;
+    const regex: RegExp = /-\W*(\w+)\W*-\n(.*?)(?=\n-|$)/gs;
 
     const matches: RegExpMatchArray[] = Array.from(str.matchAll(regex));
 

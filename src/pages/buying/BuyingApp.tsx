@@ -12,7 +12,7 @@ export default function BuyingApp(){
             setProductList(valueParsed)
         }
     }
-    return categoryWithProducts ?
+    return categoryWithProducts && Object.keys(categoryWithProducts).length > 0 ?
     <ul className="container column gap-sm">
         {Object.entries(categoryWithProducts).map(([category, productList]) =>
         <li className="fullWidth" key={category}>
