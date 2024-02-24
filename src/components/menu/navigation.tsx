@@ -5,6 +5,7 @@ const Navigation = ({handleLinkClick} : {handleLinkClick:VoidFunction}) => {
         <BaseLink to='/' onClick={handleLinkClick} >Agregar producto</BaseLink>
         <BaseLink to='/buildList' onClick={handleLinkClick} >Generar lista</BaseLink>
         <BaseLink to='/adminProducts' onClick={handleLinkClick} >Administrar productos</BaseLink>
+        <BaseLink to='/buying' onClick={handleLinkClick} >Comprando</BaseLink>
         <BaseLink to='/install' onClick={handleLinkClick}>Guia de instalacion</BaseLink>
     </div>
 }

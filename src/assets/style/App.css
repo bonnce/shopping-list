@@ -1,3 +1,6 @@
+li{
+  list-style: none;
+}
 .container{
   display: flex;
   justify-content: center;
@@ -111,6 +114,7 @@
   width: 100%;
   height: 100%;
   overflow-y: auto;
+  box-sizing: border-box;
 }
 
 .header h1{
@@ -151,6 +155,28 @@
 .card-form{
   padding: 3em;
   box-shadow: 5px 5px 10px #0007;
+}
+
+.button-card-list{
+  font-size: 1.2em;
+  padding: .2em;
+  border-radius: 5px;
+  &:disabled, &:disabled > *{
+    cursor:default;
+  }
+}
+
+.card-list{
+  border-radius: 5px;
+  padding: 5px;
+  text-align: left;
+  text-transform: capitalize;
+}
+
+.list-title{
+  font-size: 3em;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .label-text{
@@ -194,6 +220,7 @@
   border: none;
   transition: background-color 100ms ease, box-shadow 100ms ease ;
   text-align: center;
+  cursor:pointer;
 }
 
 .input-button:active{
@@ -643,6 +670,10 @@
   line-height: 1.5em;
 }
 
+.border-box, .border-box > *{
+  box-sizing: border-box;
+}
+
 .guide-icon{
   position: relative;
   top:.3em;
@@ -739,6 +770,17 @@ input[type=file]{
 .tooltip-container:hover .tooltip{
   visibility: visible;
   translate: -50% 0;
+}
+
+.product-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5em;
+  & > p{
+    font-size: 1.5em;
+  }
 }
 
 @keyframes out {

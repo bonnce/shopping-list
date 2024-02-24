@@ -86,6 +86,21 @@ entries.map(data => {
     URL.revokeObjectURL(csvURL);
 }
 
+  function textParserToObj(str:string):{[key:string]:string[]}{
+    const regex: RegExp = /-(\w+)-\n(.*?)(?=\n-|$)/gs;
+
+    const matches: RegExpMatchArray[] = Array.from(str.matchAll(regex));
+
+    const result: { [key: string]: string[] } = {};
+
+    matches.forEach(match => {
+        const key: string = match[1].toLowerCase();
+        const value: string[] = match[2].trim().split('\n');
+        result[key] = value;
+    });
+    return result
+  } 
+
   export{
     handleTotal,
     handleMenu,
@@ -98,5 +113,6 @@ entries.map(data => {
     filterCSV,
     validateData,
     productsToCSV,
-    downloadCSV
+    downloadCSV,
+    textParserToObj
 } 

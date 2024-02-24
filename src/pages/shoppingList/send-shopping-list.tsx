@@ -12,7 +12,7 @@ const SendShoppingList = ({list}:{list:{[key: string]:RequiredProduct[]}})=>{
     const [errorContact, setErrorContact] = useState<string>()
     const baseWappUrl = 'https://wa.me'
     const stringToSend = Object.entries(list).map(([cat, items]) =>
-            [`*${cat.toUpperCase()}*\n`, items.map(ele =>  ele.name)]).toString().replaceAll(/\n,|,/g,'\n')
+            [`-*${cat.toUpperCase()}*-\n`, items.map(ele =>  ele.name)]).toString().replaceAll(/\n,|,/g,'\n')
     const handleChange:ChangeEventHandler<HTMLInputElement> = (e) =>{
         setSendText(e.currentTarget.value)
     }

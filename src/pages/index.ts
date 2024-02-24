@@ -4,6 +4,7 @@ import App from "./common/App"
 import InstallAppPage from "./installApp"
 import ProductManager from "./manageProduct"
 import ShoppingList from "./shoppingList"
+import BuyingPage from "./buying"
 import 'assets/style/App.css'
 
 export{
@@ -12,5 +13,6 @@ export{
     ProductManager,
     ShoppingList,
     App,
-    InstallAppPage
+    InstallAppPage,
+    BuyingPage
 }
