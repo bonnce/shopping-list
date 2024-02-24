@@ -1,4 +1,4 @@
-import { BasicButton, Icon2x2 } from "components";
+import { Icon2x2 } from "components";
 import CardList from "components/card/cardList";
 import check from 'assets/images/check-outlined.svg'
 import cross from 'assets/images/cross-outlined.svg'

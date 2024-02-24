@@ -12,8 +12,10 @@ export default function BuyingApp(){
             setProductList(valueParsed)
         }
     }
+    const PLACEHOLDER = "Ingrese aqui su lista de productos:\n{Category}\nProduct 1\nProduct 2\n..."
+
     return categoryWithProducts && Object.keys(categoryWithProducts).length > 0 ?
-    <ul className="container column gap-sm">
+    <ul className="container column gap-sm container-list">
         {Object.entries(categoryWithProducts).map(([category, productList]) =>
         <li className="fullWidth" key={category}>
             <h3 className="list-title">{category}</h3>
@@ -28,7 +30,7 @@ export default function BuyingApp(){
     <Card className='card-form'>
         <div className="container column gap-md border-box">
         <h2 className="form-title">Lista de productos</h2>
-        <textarea className="fullWidth input-text" name="productList" id="productList" rows={10} placeholder="Ingrese aqui su lista de productos" />
+        <textarea className="fullWidth input-text" name="productList" id="productList" rows={10} placeholder={PLACEHOLDER} />
         <InputButton value="Confirmar" className="fullWidth" onClick={handleClick} />
         </div>
     </Card>

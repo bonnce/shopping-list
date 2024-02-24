@@ -783,6 +783,11 @@ input[type=file]{
   }
 }
 
+.container-list{
+  max-width: 100%;
+  width: 80ch;
+}
+
 @keyframes out {
   from{
     opacity: 1;
