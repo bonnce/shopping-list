@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/shopping-list/static/css/main.4ae0303c.css",
-    "main.js": "/shopping-list/static/js/main.a85d86d3.js",
+    "main.css": "/shopping-list/static/css/main.d1e09197.css",
+    "main.js": "/shopping-list/static/js/main.b58114f1.js",
     "static/js/787.0bd3b402.chunk.js": "/shopping-list/static/js/787.0bd3b402.chunk.js",
     "static/media/dust3.png": "/shopping-list/static/media/dust3.c00bf991fd9129bfb853.png",
     "static/media/MerriweatherSans-SemiBold.woff": "/shopping-list/static/media/MerriweatherSans-SemiBold.2612492f368c0509d9aa.woff",
@@ -37,12 +37,12 @@
     "index.html": "/shopping-list/index.html",
     "static/media/cross.svg": "/shopping-list/static/media/cross.5b316c85f6f8b8285ca60d9eb50df84b.svg",
     "static/media/squarePlus.svg": "/shopping-list/static/media/squarePlus.012a32d6d73c36358d6a3e031aa8159d.svg",
-    "main.4ae0303c.css.map": "/shopping-list/static/css/main.4ae0303c.css.map",
-    "main.a85d86d3.js.map": "/shopping-list/static/js/main.a85d86d3.js.map",
+    "main.d1e09197.css.map": "/shopping-list/static/css/main.d1e09197.css.map",
+    "main.b58114f1.js.map": "/shopping-list/static/js/main.b58114f1.js.map",
     "787.0bd3b402.chunk.js.map": "/shopping-list/static/js/787.0bd3b402.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4ae0303c.css",
-    "static/js/main.a85d86d3.js"
+    "static/css/main.d1e09197.css",
+    "static/js/main.b58114f1.js"
   ]
 }
