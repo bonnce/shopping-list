@@ -21,7 +21,7 @@ const InputButton = (props: InputHTMLAttributes<HTMLInputElement>) => {
         }
     }
 
-    return <input ref={buttonRef} className={newClassName} {...restProps} 
+    return <input ref={buttonRef} type="button" className={newClassName} {...restProps} 
     onMouseDown={mouseDown} onMouseUp={mouseUp} onMouseLeave={mouseUp} onTouchStart={mouseDown} onTouchEnd={mouseUp}
     style={{backgroundColor:theme.ten,color:theme.sixty, boxShadow: `0 2px 5px 2px ${theme.thirty}, 0 5px 8px 0px ${theme.ten}55`}} />
 }
